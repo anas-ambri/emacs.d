@@ -1,3 +1,5 @@
 (setq make-backup-files nil)
-(add-to-list 'load-path "~/.emacs.d/mode/magit")
+(add-to-list 'load-path "~/.emacs.d/modes/magit")
+(add-to-list 'load-path "~/.emacs.d/modes/nodejs")
 (require 'magit)
+(require 'nodejs-repl)
