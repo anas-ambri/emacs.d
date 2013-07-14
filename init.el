@@ -1,12 +1,21 @@
 ;No files with annoying tildes, even if it means no backup
 (setq make-backup-files nil)
+;Copy & paste from clipboard
+(setq x-select-enable-clipboard t)
 
 ;magit
+;;;;;;
 (add-to-list 'load-path "~/.emacs.d/modes/magit")
 (require 'magit)
 
-;auto-complete based off
+;nodejs-repl
+;;;;;;;;;;;;
+(add-to-list 'load-path "~/.emacs.d/modes/nodejs")
+(require 'nodejs-repl)
+
+; auto-complete, yasnippet and syntax checking based off
 ; http://blog.deadpansincerity.com/2011/05/setting-up-emacs-as-a-javascript-editing-environment-for-fun-and-profit/
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 (add-to-list 'load-path "~/.emacs.d/modes/auto-complete")
 (require 'auto-complete-config)
 (add-to-list 'ac-dictionary-directories "~/.emacs.d/auto-complete/dict")
@@ -15,3 +24,15 @@
 (setq ac-auto-start 1)
 ;ignore case when auto-completing
 (setq ac-ignore-case t)
+
+;Snippeting
+;;;;;;;;;;;
+(add-to-list 'load-path "~/.emacs.d/plugins/yasnippet")
+(require 'yasnippet)
+(yas/global-mode t)
+;Taken from http://stackoverflow.com/questions/15774807/emacs-24-autocomplete-yasnippet
+(setq ac-source-yasnippet nil)
+(setq yas-snippet-dirs "~/.emacs.d/plugins/yasnippet/snippets")
+
+;syntax checking for js
+;;;;;;;;;;;;;;;;;;;;;;;
