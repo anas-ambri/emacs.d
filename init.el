@@ -13,7 +13,7 @@
 (add-to-list 'load-path "~/.emacs.d/modes/nodejs")
 (require 'nodejs-repl)
 
-; auto-complete, yasnippet and syntax checking based off
+; auto-complete, yasnippet, syntax checking and code folding based off
 ; http://blog.deadpansincerity.com/2011/05/setting-up-emacs-as-a-javascript-editing-environment-for-fun-and-profit/
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 (add-to-list 'load-path "~/.emacs.d/modes/auto-complete")
@@ -48,3 +48,9 @@
 (add-to-list 'load-path "~/.emacs.d/modes/flymake-cursor")
 (require 'flymake-cursor)
 
+;Code folding
+;;;;;;;;;;;;;
+(add-hook 'js-mode-hook (lambda () (imenu-add-menubar-index) (hs-minor-mode t)))
+(add-hook 'javascript-mode-hook (lambda () (imenu-add-menubar-index) (hs-minor-mode t)))
+(global-set-key (kbd "C-x C-h") 'hs-show-block)
+(global-set-key (kbd "C-x C-k") 'hs-hide-block)
