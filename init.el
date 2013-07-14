@@ -36,3 +36,15 @@
 
 ;syntax checking for js
 ;;;;;;;;;;;;;;;;;;;;;;;
+(add-to-list 'load-path "~/.emacs.d/plugins/lintnode")
+(require 'flymake-jslint)
+(setq lintnode-location "/.emacs.d/plugins/lintnode" )
+;exclude some error messages
+(setq lintnode-jslint-excludes (list 'nomen 'plusplus 'onevar 'white))
+; Add hooks for js and javascript modes
+(add-hook 'js-mode-hook (lambda () (lintnode-hook)))
+(add-hook 'javascript-mode-hook (lambda () (lintnode-hook)))
+;flymake cursor to get error in message buffer
+(add-to-list 'load-path "~/.emacs.d/modes/flymake-cursor")
+(require 'flymake-cursor)
+
