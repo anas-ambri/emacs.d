@@ -12,6 +12,6 @@
 (add-to-list 'ac-dictionary-directories "~/.emacs.d/auto-complete/dict")
 (setq-default ac-sources (add-to-list 'ac-sources 'ac-source-dictionary))
 (global-auto-complete-mode t)
-(setq ac-auto-start 2)
+(setq ac-auto-start 1)
 ;ignore case when auto-completing
 (setq ac-ignore-case t)
