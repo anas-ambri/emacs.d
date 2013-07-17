@@ -2,6 +2,11 @@
 (setq make-backup-files nil)
 ;Copy & paste from clipboard
 (setq x-select-enable-clipboard t)
+;Window resizing
+(global-set-key (kbd "S-C-<left>") 'shrink-window-horizontally)
+(global-set-key (kbd "S-C-<right>") 'enlarge-window-horizontally)
+(global-set-key (kbd "S-C-<down>") 'shrink-window)
+(global-set-key (kbd "S-C-<up>") 'enlarge-window)
 
 ;magit
 ;;;;;;
@@ -10,7 +15,7 @@
 
 ;nodejs-repl
 ;;;;;;;;;;;;
-(add-to-list 'load-path "~/.emacs.d/modes/nodejs")
+(add-to-list 'load-path "~/.emacs.d/plugins/nodejs")
 (require 'nodejs-repl)
 
 ; auto-complete, yasnippet, syntax checking and code folding based off
