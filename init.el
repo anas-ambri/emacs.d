@@ -59,3 +59,9 @@
 (add-hook 'javascript-mode-hook (lambda () (imenu-add-menubar-index) (hs-minor-mode t)))
 (global-set-key (kbd "C-x C-h") 'hs-show-block)
 (global-set-key (kbd "C-x C-k") 'hs-hide-block)
+
+;Adding eproject
+;;;;;;;;;;;;;;;;
+(add-to-list 'load-path "~/.emacs.d/plugins/eproject")
+(require 'eproject)
+(require 'eproject-extras)
