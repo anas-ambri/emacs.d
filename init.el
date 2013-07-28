@@ -62,6 +62,6 @@
 
 ;Adding eproject
 ;;;;;;;;;;;;;;;;
-(add-to-list 'load-path "~/.emacs.d/plugins/eproject")
-(require 'eproject)
-(require 'eproject-extras)
+;(add-to-list 'load-path "~/.emacs.d/plugins/eproject")
+;(require 'eproject)
+;(require 'eproject-extras)
