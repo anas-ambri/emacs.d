@@ -65,3 +65,16 @@
 ;(add-to-list 'load-path "~/.emacs.d/plugins/eproject")
 ;(require 'eproject)
 ;(require 'eproject-extras)
+
+;Ergoemacs : http://ergoemacs.github.io/ergoemacs-mode/
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+(add-to-list 'load-path "~/.emacs.d/modes/ergoemacs-mode")
+(require 'ergoemacs-mode)
+(setq ergoemacs-theme nil) ;; Uses Standard Ergoemacs keyboard theme
+(setq ergoemacs-keyboard-layout "us") ;; Assumes QWERTY keyboard layout
+(ergoemacs-mode 1)
+
+;Lookup documentation online
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+; Based off http://ergoemacs.org/emacs/emacs_lookup_ref.html
+;(add-to-list 'load-path "~/.emacs.d/plugins/lookup-word")
