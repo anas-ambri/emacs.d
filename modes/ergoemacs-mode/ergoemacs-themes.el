@@ -144,8 +144,8 @@
     ("M-3" delete-other-windows "x other pane")
     ("M-2" delete-window "x pane")
     
-    ("M-4" split-window-vertically "split |")
-    ("M-$" split-window-horizontally "split —")
+    ("M-4" split-window-horizontally "split |")
+    ("M-$" split-window-vertically "split —")
     
     ("M-8" ergoemacs-extend-selection "←region→")
     ("M-*" ergoemacs-select-text-in-quote "←quote→")
@@ -282,8 +282,9 @@
     ("C-h 1" describe-function)
     ("C-h 2" describe-variable)
     ("C-h 3" describe-key)
-    ("C-h 4" describe-char)
-    ("C-h 5" man)
+    ;("C-h 4" describe-char)
+    ("C-h 4" man)
+    ("C-h 6" lookup-mode-specific)
     ("C-h 7" lookup-google)
     ("C-h 8" lookup-wikipedia)
     ("C-h 9" lookup-word-definition)
