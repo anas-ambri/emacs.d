@@ -70,11 +70,24 @@
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 (add-to-list 'load-path "~/.emacs.d/modes/ergoemacs-mode")
 (require 'ergoemacs-mode)
-(setq ergoemacs-theme nil) ;; Uses Standard Ergoemacs keyboard theme
+(setq ergoemacs-theme "lvl3") ;; Uses Standard Ergoemacs keyboard theme
+(setq ergoemacs-mode-used "5.7.5")
+(setq ergoemacs-use-menus t)
 (setq ergoemacs-keyboard-layout "us") ;; Assumes QWERTY keyboard layout
 (ergoemacs-mode 1)
+
+;Custom commands
+(ergoemacs-key "C-\'" 'newline-and-indent "Execute")
 
 ;Lookup documentation online
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ; Based off http://ergoemacs.org/emacs/emacs_lookup_ref.html
-;(add-to-list 'load-path "~/.emacs.d/plugins/lookup-word")
+(add-to-list 'load-path "~/.emacs.d/plugins/lookup-word")
+(require 'lookup-word)
+(setq lookup-hash (make-hash-table :test 'equal))
+(puthash "node" "http://www.google.com/search?q=nodejs+�" lookup-hash)
+(puthash "nodejs" "http://www.google.com/search?q=nodejs+�" lookup-hash)
+(defun lookup-mode-specific (site &optional input-word)
+  "Lookup current word or text selection depending on given site."
+  (interactive "sEnter documentation site: ")
+  (lookup-word-on-internet input-word (gethash site lookup-hash) ) )

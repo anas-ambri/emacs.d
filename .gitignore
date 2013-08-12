@@ -1,3 +1,5 @@
 #Ignore anything in auto-save-list
 auto-save-list/
 ac-comphist.dat
+/ergoemacs-extras/ergo-layouts/ergoemacs-layout-us-prefix.svg
+/ergoemacs-extras/ergo-layouts/ergoemacs-layout-us.svg
