@@ -1,0 +1,2 @@
+Listing of elements to setup:
+- Ctrl+Tab to cycle through panes instead of M+s
