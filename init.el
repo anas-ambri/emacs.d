@@ -7,10 +7,12 @@
 (global-set-key (kbd "S-C-<right>") 'enlarge-window-horizontally)
 (global-set-key (kbd "S-C-<down>") 'shrink-window)
 (global-set-key (kbd "S-C-<up>") 'enlarge-window)
+;EJS files use html-mode
+(add-to-list 'auto-mode-alist '("\\.ejs\\'" . html-mode))
 
 ;magit
 ;;;;;;
-(add-to-list 'load-path "~/.emacs.d/modes/magit")
+(add-to-list 'load-path "~/.emacs.d/plugins/magit")
 (require 'magit)
 
 ;nodejs-repl
@@ -21,9 +23,9 @@
 ; auto-complete, yasnippet, syntax checking and code folding based off
 ; http://blog.deadpansincerity.com/2011/05/setting-up-emacs-as-a-javascript-editing-environment-for-fun-and-profit/
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-(add-to-list 'load-path "~/.emacs.d/modes/auto-complete")
+(add-to-list 'load-path "~/.emacs.d/plugins/auto-complete")
 (require 'auto-complete-config)
-(add-to-list 'ac-dictionary-directories "~/.emacs.d/auto-complete/dict")
+(add-to-list 'ac-dictionary-directories "~/.emacs.d/plugins/auto-complete/dict")
 (setq-default ac-sources (add-to-list 'ac-sources 'ac-source-dictionary))
 (global-auto-complete-mode t)
 (setq ac-auto-start 1)
@@ -87,7 +89,21 @@
 (setq lookup-hash (make-hash-table :test 'equal))
 (puthash "node" "http://www.google.com/search?q=nodejs+�" lookup-hash)
 (puthash "nodejs" "http://www.google.com/search?q=nodejs+�" lookup-hash)
+(puthash "juice" "https://github.com/LearnBoost/juice#documentation" lookup-hash)
+
 (defun lookup-mode-specific (site &optional input-word)
   "Lookup current word or text selection depending on given site."
   (interactive "sEnter documentation site: ")
   (lookup-word-on-internet input-word (gethash site lookup-hash) ) )
+
+;json-mode
+;;;;;;;;;;;;
+(add-to-list 'load-path "~/.emacs.d/modes/json-mode")
+(require 'json-mode)
+; beautify-json based off http://stackoverflow.com/questions/435847/emacs-mode-to-edit-json#answer-7934783
+(defun beautify-json ()
+  (interactive)
+  (let ((b (if mark-active (min (point) (mark)) (point-min)))
+        (e (if mark-active (max (point) (mark)) (point-max))))
+    (shell-command-on-region b e
+     "python -mjson.tool" (current-buffer) t)))
