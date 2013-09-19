@@ -1,2 +1,0 @@
-Listing of elements to setup:
-- Ctrl+Tab to cycle through panes instead of M+s, and Ctrl+Shift+Tab to cycle in reverse direction
