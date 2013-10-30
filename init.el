@@ -9,6 +9,8 @@
 (global-set-key (kbd "S-C-<up>") 'enlarge-window)
 ;EJS files use html-mode
 (add-to-list 'auto-mode-alist '("\\.ejs\\'" . html-mode))
+;STYL files use css-mode
+(add-to-list 'auto-mode-alist '("\\.styl\\'" . css-mode))
 
 ;magit
 ;;;;;;
