@@ -11,6 +11,9 @@
 (add-to-list 'auto-mode-alist '("\\.ejs\\'" . html-mode))
 ;STYL files use css-mode
 (add-to-list 'auto-mode-alist '("\\.styl\\'" . css-mode))
+;JS files use js2-mode
+(add-to-list 'auto-mode-alist '("\\.js\\'" . js2-mode))
+
 
 ;magit
 ;;;;;;
@@ -42,27 +45,6 @@
 ;Taken from http://stackoverflow.com/questions/15774807/emacs-24-autocomplete-yasnippet
 (setq ac-source-yasnippet nil)
 (setq yas-snippet-dirs "~/.emacs.d/plugins/yasnippet/snippets")
-
-;syntax checking for js
-;;;;;;;;;;;;;;;;;;;;;;;
-(add-to-list 'load-path "~/.emacs.d/plugins/lintnode")
-(require 'flymake-jslint)
-(setq lintnode-location "/.emacs.d/plugins/lintnode" )
-;exclude some error messages
-(setq lintnode-jslint-excludes (list 'nomen 'plusplus 'onevar 'white))
-; Add hooks for js and javascript modes
-(add-hook 'js-mode-hook (lambda () (lintnode-hook)))
-(add-hook 'javascript-mode-hook (lambda () (lintnode-hook)))
-;flymake cursor to get error in message buffer
-(add-to-list 'load-path "~/.emacs.d/modes/flymake-cursor")
-(require 'flymake-cursor)
-
-;Code folding
-;;;;;;;;;;;;;
-(add-hook 'js-mode-hook (lambda () (imenu-add-menubar-index) (hs-minor-mode t)))
-(add-hook 'javascript-mode-hook (lambda () (imenu-add-menubar-index) (hs-minor-mode t)))
-(global-set-key (kbd "C-x C-h") 'hs-show-block)
-(global-set-key (kbd "C-x C-k") 'hs-hide-block)
 
 ;Adding eproject
 ;;;;;;;;;;;;;;;;
