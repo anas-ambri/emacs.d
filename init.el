@@ -107,3 +107,18 @@
         (e (if mark-active (max (point) (mark)) (point-max))))
     (shell-command-on-region b e
      "python -mjson.tool" (current-buffer) t)))
+
+;Adding android-mode
+;;;;;;;;;;;;;;;;;;;;
+;Based off http://wjlroe.github.io/2010/05/16/emacs-for-android-development.html
+;For keybindings and how to setup project, see link.
+; More info here: http://web.archive.org/web/20120321225744/http://riddell.us/AndroidWithEmacsOnUbuntu.html
+(setq android-mode-sdk-dir "~/dev-tool/android-sdk/")
+(add-to-list 'load-path "~/.emacs.d/modes/java-mode-indent-annotations")
+(add-to-list 'load-path "~/.emacs.d/modes/android-mode")
+(require 'android-mode)
+(require 'java-mode-indent-annotations)
+
+(add-hook 'java-mode-hook
+      (function (lambda() (java-mode-indent-annotations-setup))))
+
