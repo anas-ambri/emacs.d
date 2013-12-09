@@ -13,7 +13,10 @@
 (add-to-list 'auto-mode-alist '("\\.styl\\'" . css-mode))
 ;JS files use js2-mode
 (add-to-list 'auto-mode-alist '("\\.js\\'" . js2-mode))
-
+;Converting tabs into spaces
+(setq c-basic-indent 2)
+(setq tab-width 4)
+(setq indent-tabs-mode nil)
 
 ;magit
 ;;;;;;
