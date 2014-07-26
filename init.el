@@ -1,6 +1,8 @@
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ; Config
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;;; turn on syntax highlighting
+(global-font-lock-mode 1)
 
 ;No files with annoying tildes, even if it means no backup
 (setq make-backup-files nil)
@@ -40,8 +42,6 @@
 (global-set-key (kbd "S-C-<up>") 'enlarge-window)
 
 
-
-
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ; Modes
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
@@ -57,6 +57,7 @@
 (ergoemacs-mode 1)
 ;Custom commands
 (ergoemacs-key "C-\'" 'newline-and-indent "Execute")
+
 
 ;Adding android-mode
 ;;;;;;;;;;;;;;;;;;;;
@@ -109,7 +110,20 @@
     (shell-command-on-region b e
      "python -mjson.tool" (current-buffer) t)))
 
+;groovy-mode
+;;;;;;;;;;;;;
+(add-to-list 'load-path "~/.emacs.d/modes/groovy-mode")
+(require 'groovy-mode)
+;;; use groovy-mode when file ends in .groovy or has #!/bin/groovy at start
+(autoload 'groovy-mode "groovy-mode" "Major mode for editing Groovy code." t)
+(add-to-list 'auto-mode-alist '("\.groovy$" . groovy-mode))
+(add-to-list 'interpreter-mode-alist '("groovy" . groovy-mode))
 
+;;; make Groovy mode electric by default.
+(add-hook 'groovy-mode-hook
+          '(lambda ()
+             (require 'groovy-electric)
+             (groovy-electric-mode)))
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ; Plugins
