@@ -21,6 +21,7 @@
 (setq tab-width 4)
 (setq indent-tabs-mode nil)
 
+(setq mac-command-modifier 'meta)
 
 ;uniquify
 (require 'uniquify)
