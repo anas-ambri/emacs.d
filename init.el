@@ -60,6 +60,11 @@
 (ergoemacs-key "C-\'" 'newline-and-indent "Execute")
 
 
+; Adding web-mode
+;;;;;;;;;;;;;;;;;
+(require 'web-mode)
+(add-to-list 'auto-mode-alist '("\\.hbs\\'" . web-mode))
+
 ;Adding android-mode
 ;;;;;;;;;;;;;;;;;;;;
 ;Based off http://wjlroe.github.io/2010/05/16/emacs-for-android-development.html
