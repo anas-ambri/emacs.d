@@ -62,6 +62,7 @@
 
 ; Adding web-mode
 ;;;;;;;;;;;;;;;;;
+(add-to-list 'load-path "~/.emacs.d/modes/web-mode")
 (require 'web-mode)
 (add-to-list 'auto-mode-alist '("\\.hbs\\'" . web-mode))
 
