@@ -126,6 +126,20 @@
 (add-to-list 'auto-mode-alist '("\.groovy$" . groovy-mode))
 (add-to-list 'interpreter-mode-alist '("groovy" . groovy-mode))
 
+;markdown-mode
+;;;;;;;;;;;;;;
+(add-to-list 'load-path "~/.emacs.d/modes/markdown-mode")
+(require 'markdown-mode)
+(autoload 'markdown-mode "markdown-mode"
+   "Major mode for editing Markdown files" t)
+(add-to-list 'auto-mode-alist '("\\.markdown\\'" . markdown-mode))
+(add-to-list 'auto-mode-alist '("\\.md\\'" . markdown-mode))
+
+(autoload 'gfm-mode "gfm-mode"
+   "Major mode for editing GitHub Flavored Markdown files" t)
+(add-to-list 'auto-mode-alist '("README\\.md\\'" . gfm-mode))
+
+
 ;;; make Groovy mode electric by default.
 (add-hook 'groovy-mode-hook
           '(lambda ()
@@ -136,10 +150,6 @@
 ; Plugins
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 
-;magit
-;;;;;;
-(add-to-list 'load-path "~/.emacs.d/plugins/magit")
-(require 'magit)
 
 ;nodejs-repl
 ;;;;;;;;;;;;
