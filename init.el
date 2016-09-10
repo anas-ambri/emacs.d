@@ -1,6 +1,7 @@
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ; Config
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+
 ;;; turn on syntax highlighting
 (global-font-lock-mode 1)
 
@@ -9,6 +10,9 @@
 
 ;Copy & paste from clipboard
 (setq x-select-enable-clipboard t)
+
+;Open emacs in front of terminal when opened from command line
+(x-focus-frame nil)
 
 ;EJS files use html-mode
 (add-to-list 'auto-mode-alist '("\\.ejs\\'" . html-mode))
@@ -138,6 +142,8 @@
 (autoload 'gfm-mode "gfm-mode"
    "Major mode for editing GitHub Flavored Markdown files" t)
 (add-to-list 'auto-mode-alist '("README\\.md\\'" . gfm-mode))
+;Use bin/markdown as the markdown-command to generate html
+(custom-set-variables '(markdown-command "/usr/local/bin/markdown"))
 
 
 ;;; make Groovy mode electric by default.
@@ -149,7 +155,6 @@
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ; Plugins
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-
 
 ;nodejs-repl
 ;;;;;;;;;;;;
@@ -191,7 +196,8 @@
 (setq lookup-hash (make-hash-table :test 'equal))
 (puthash "node" "http://www.google.com/search?q=nodejs+�" lookup-hash)
 (puthash "nodejs" "http://www.google.com/search?q=nodejs+�" lookup-hash)
-(puthash "juice" "https://github.com/LearnBoost/juice#documentation" lookup-hash)
+(puthash "android" "https://developer.android.com/index.html#q=�" lookup-hash)
+(puthash "thesaurus" "http://www.thesaurus.com/browse/�" lookup-hash)
 
 (defun lookup-mode-specific (site &optional input-word)
   "Lookup current word or text selection depending on given site."

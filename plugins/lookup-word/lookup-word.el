@@ -118,59 +118,59 @@ For a list of online reference sites, see:
      ((string-equal system-type "darwin") ; Mac
       (browse-url myUrl) ) ) ))
 
-(defun lookup-google (&optional input-word)
-  "Lookup current word or text selection in Google Search.
-See also `lookup-word-on-internet'."
-  (interactive)
-  (let ((dictUrl "http://www.google.com/search?q=�" ))
-    (lookup-word-on-internet input-word dictUrl) ) )
-
-(defun lookup-wikipedia (&optional input-word)
-  "Lookup current word or text selection in Wikipedia.
-See also `lookup-word-on-internet'."
-  (interactive)
-  (let ((dictUrl "http://en.wikipedia.org/wiki/�" ))
-    (lookup-word-on-internet input-word dictUrl) ) )
-
-(defun lookup-word-dict-org (&optional input-word)
-  "Lookup definition of current word or text selection in URL `http://dict.org/'.
-See also `lookup-word-on-internet'."
-  (interactive)
-  (let ((dictUrl "http://www.dict.org/bin/Dict?Form=Dict2&Database=*&Query=�" ))
-    (lookup-word-on-internet input-word dictUrl)
-    ) )
-
-(defun lookup-word-definition (&optional input-word)
-  "Lookup definition of current word or text selection in URL `http://thefreedictionary.com/'.
-See also `lookup-word-on-internet'."
-  (interactive)
-  (let ((dictUrl "http://www.thefreedictionary.com/�") )
-    (lookup-word-on-internet input-word dictUrl) ) )
-
-(defun lookup-answers.com (&optional input-word)
-  "Lookup current word or text selection in URL `http://answers.com/'.
-See also `lookup-word-on-internet'."
-  (interactive)
-  (let ((dictUrl "http://www.answers.com/main/ntquery?s=�"
-) )
-    (lookup-word-on-internet input-word dictUrl) ) )
-
-(defun lookup-wiktionary (&optional input-word)
-  "Lookup definition of current word or text selection in URL `http://en.wiktionary.org/'
-See also `lookup-word-on-internet'."
-  (interactive)
-  (let ((dictUrl "http://en.wiktionary.org/wiki/�" ))
-    (lookup-word-on-internet input-word dictUrl) ) )
-
-(defun lookup-all-dictionaries (&optional input-word)
-  "Lookup definition in many dictionaries.
-Current word or text selection is used as input.
-The dictionaries used are in `all-dictionaries'.
-
-See also `lookup-word-on-internet'."
-  (interactive)
-  (mapc (lambda (dictUrl) (lookup-word-on-internet input-word dictUrl)) all-dictionaries) )
-
+;(defun lookup-google (&optional input-word)
+;  "Lookup current word or text selection in Google Search.
+;See also `lookup-word-on-internet'."
+;  (interactive)
+;  (let ((dictUrl "http://www.google.com/search?q=�" ))
+;    (lookup-word-on-internet input-word dictUrl) ) )
+;
+;(defun lookup-wikipedia (&optional input-word)
+;  "Lookup current word or text selection in Wikipedia.
+;See also `lookup-word-on-internet'."
+;  (interactive)
+;  (let ((dictUrl "http://en.wikipedia.org/wiki/�" ))
+;    (lookup-word-on-internet input-word dictUrl) ) )
+;
+;(defun lookup-word-dict-org (&optional input-word)
+;  "Lookup definition of current word or text selection in URL `http://dict.org/'.
+;See also `lookup-word-on-internet'."
+;  (interactive)
+;  (let ((dictUrl "http://www.dict.org/bin/Dict?Form=Dict2&Database=*&Query=�" ))
+;    (lookup-word-on-internet input-word dictUrl)
+;    ) )
+;
+;(defun lookup-word-definition (&optional input-word)
+;  "Lookup definition of current word or text selection in URL `http://thefreedictionary.com/'.
+;See also `lookup-word-on-internet'."
+;  (interactive)
+;  (let ((dictUrl "http://www.thefreedictionary.com/�") )
+;    (lookup-word-on-internet input-word dictUrl) ) )
+;
+;(defun lookup-answers.com (&optional input-word)
+;  "Lookup current word or text selection in URL `http://answers.com/'.
+;See also `lookup-word-on-internet'."
+;  (interactive)
+;  (let ((dictUrl "http://www.answers.com/main/ntquery?s=�"
+;) )
+;    (lookup-word-on-internet input-word dictUrl) ) )
+;
+;(defun lookup-wiktionary (&optional input-word)
+;  "Lookup definition of current word or text selection in URL `http://en.wiktionary.org/'
+;See also `lookup-word-on-internet'."
+;  (interactive)
+;  (let ((dictUrl "http://en.wiktionary.org/wiki/�" ))
+;    (lookup-word-on-internet input-word dictUrl) ) )
+;
+;(defun lookup-all-dictionaries (&optional input-word)
+;  "Lookup definition in many dictionaries.
+;Current word or text selection is used as input.
+;The dictionaries used are in `all-dictionaries'.
+;
+;See also `lookup-word-on-internet'."
+;  (interactive)
+;  (mapc (lambda (dictUrl) (lookup-word-on-internet input-word dictUrl)) all-dictionaries) )
+;
 
 
 (provide 'lookup-word)
