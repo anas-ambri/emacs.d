@@ -66,3 +66,4 @@ My emacs.d folder
 ###Misc
 
 - To insert a character at the beginning of a selected region:  Cmd+a 'string-insert-rectangle'
+- To remove characters at the beginning of a selected region: Cmd+a 'kill-rectangle'
