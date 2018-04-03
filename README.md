@@ -2,13 +2,13 @@ emacs.d
 =======
 My emacs.d folder
 
-##Available commands
+## Available commands
 
-###References
+### References
 [Ergoemacs](https://ergoemacs.github.io/)
 [Markdown preview](http://jblevins.org/projects/markdown-mode/)
 
-###Panes
+### Panes
 
 - Cmd+2:         Close this pane
 - Cmd+3:         Close other pane
@@ -17,7 +17,7 @@ My emacs.d folder
 - Cmd+s:         Next pane
 - Cmd+Shift+s:   Previous pane
 
-###Navigation
+### Navigation
 
 - Cmd+l:         Next character
 - Cmd+j:         Previous character
@@ -36,14 +36,14 @@ My emacs.d folder
 - Cmd+n:         Beginning of buffer
 - Cmd+Shift+n:   End of buffer
 
-###Selection
+### Selection
 
 - Ctrl+Space:    Set mark
 - Cmd+6:         Select block
 - Cmd+7:         Select line
 - Cmd+8:         Select region
 
-###Edit
+### Edit
 
 - Cmd+5:         Replace
 - Cmd+Shift+5:   Regex replace
@@ -54,16 +54,16 @@ My emacs.d folder
 - Cmd+g:         Delete next line
 - Cmd+shift+g:   Delete previous line (between two new lines)
 
-###Markdown preview
+### Markdown preview
 
 - Ctrl+c Ctrl+c p: show preview in browser
 
 
-###Lookup
+### Lookup
 
 - Cmd+a 'lookup-mode-specific', then type one of following: `node`, `android`, `thesaurus`
 
-###Misc
+### Misc
 
 - To insert a character at the beginning of a selected region:  Cmd+a 'string-insert-rectangle'
 - To remove characters at the beginning of a selected region: Cmd+a 'kill-rectangle'
